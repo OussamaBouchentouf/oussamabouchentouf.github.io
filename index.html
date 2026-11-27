@@ -1,0 +1,1214 @@
+<!doctype html><html lang="fr"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Oussama Bouchentouf</title>
+<meta name="description" content="Oussama Bouchentouf, ingénieur logiciel Android, systèmes embarqués, robotique et IoT. Portfolio bilingue français / anglais.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@500;600;700&display=swap">
+<style>
+/* Layout: calm single flow of bands. Hero (text + ringed portrait), filterable project grid led by one wide featured
+   card (each card opens a case study), a three-step AI workflow band, "beyond code" row, timeline beside skills, contact. */
+:root {
+  --bg: #F4F8F7;
+  --surface: #FFFFFF;
+  --ink: #13272B;
+  --muted: #52686C;
+  --line: #D9E4E2;
+  --accent: #0E7A80;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #DCEFED;
+  --warm: #D9703F;
+  --warm-soft: #FBE6DA;
+  --shadow: 0 1px 2px rgba(19, 39, 43, .06), 0 10px 28px rgba(19, 39, 43, .08);
+  --f-display: "Sora", "Segoe UI", system-ui, sans-serif;
+  --f-body: "DM Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D191B; --surface: #14252A; --ink: #E3EEEC; --muted: #9DB4B2; --line: #24393D;
+    --accent: #4CC4BE; --accent-ink: #062220; --accent-soft: #163A3B; --warm: #F0A07A; --warm-soft: #3A2920;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 30px rgba(0, 0, 0, .35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D191B; --surface: #14252A; --ink: #E3EEEC; --muted: #9DB4B2; --line: #24393D;
+  --accent: #4CC4BE; --accent-ink: #062220; --accent-soft: #163A3B; --warm: #F0A07A; --warm-soft: #3A2920;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 12px 30px rgba(0, 0, 0, .35);
+  color-scheme: dark;
+}
+
+:root:not(.l-en) .en, :root.l-en .fr { display: none !important; }
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 16px/1.6 var(--f-body);
+  -webkit-font-smoothing: antialiased;
+}
+body:has(dialog[open]) { overflow: hidden; }
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 30; background: var(--bg);
+}
+.wrap {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-left: max(clamp(16px, 4vw, 32px), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(16px, 4vw, 32px), env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+/* Navigation */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; gap: 22px; padding-block: 12px; }
+.brand {
+  font: 600 1.02rem var(--f-display); letter-spacing: -.01em;
+  color: var(--ink); text-decoration: none; margin-right: auto;
+}
+.brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 20px; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: .94rem; transition: color .2s; }
+.nav-links a:hover { color: var(--ink); }
+.lang {
+  display: inline-flex; padding: 3px; gap: 2px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+}
+.lang button {
+  font: 600 .76rem var(--f-mono); letter-spacing: .04em;
+  border: 0; background: transparent; color: var(--muted);
+  padding: 5px 11px; border-radius: 999px; cursor: pointer; transition: background .2s, color .2s;
+}
+.lang button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.progress {
+  position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--warm));
+  transform-origin: 0 50%; transform: scaleX(0);
+}
+
+/* Hero */
+.hero { position: relative; overflow-x: clip; }
+.blob { position: absolute; border-radius: 50%; filter: blur(64px); opacity: .7; pointer-events: none; }
+.blob.a { width: 440px; height: 440px; background: var(--accent-soft); top: -140px; right: -60px;
+  animation: drift 18s ease-in-out infinite alternate; }
+.blob.b { width: 360px; height: 360px; background: var(--warm-soft); bottom: -160px; left: -120px;
+  animation: drift 23s ease-in-out infinite alternate-reverse; }
+@keyframes drift { to { transform: translate(-70px, 50px) scale(1.15); } }
+.hero .wrap {
+  position: relative;
+  display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 48px; align-items: center; padding-block: 76px 68px;
+}
+.eyebrow {
+  font: 500 .8rem var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent);
+  margin: 0;
+}
+h1 {
+  font: 700 clamp(2.4rem, 6vw, 3.9rem)/1.04 var(--f-display);
+  letter-spacing: -.035em; margin: 14px 0 18px; text-wrap: balance;
+}
+.lead { font-size: 1.14rem; color: var(--muted); max-width: 33em; margin: 0; }
+.status {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 24px;
+  font: 500 .82rem var(--f-mono); color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 8px 15px;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warm); flex: none;
+  animation: pulse 2.2s ease-out infinite; }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--warm) 55%, transparent); }
+  80%, 100% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--warm) 0%, transparent); }
+}
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 12px;
+  font: 600 .97rem var(--f-body); text-decoration: none; cursor: pointer;
+  border: 1px solid transparent; transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.ghost { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.btn svg { width: 16px; height: 16px; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px 32px; margin: 36px 0 0; padding: 0; list-style: none;
+  color: var(--muted); font-size: .9rem; }
+.facts b { display: block; font: 600 1.3rem var(--f-display); color: var(--ink); letter-spacing: -.02em; }
+
+.portrait { justify-self: center; position: relative; width: min(310px, 72vw); aspect-ratio: 1; max-width: 100%; }
+.ring {
+  position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--accent), var(--warm), var(--accent-soft), var(--accent));
+  animation: spin 16s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.portrait img {
+  position: absolute; inset: 7px; width: calc(100% - 14px); height: calc(100% - 14px);
+  border-radius: 50%; object-fit: cover; object-position: 50% 28%;
+  border: 6px solid var(--bg); background: var(--surface);
+}
+.chip-float {
+  position: absolute; left: -14px; bottom: 26px;
+  font: 600 .8rem var(--f-mono); color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 8px 12px; box-shadow: var(--shadow); animation: bob 5s ease-in-out infinite;
+}
+.chip-float.alt { left: auto; right: -10px; bottom: auto; top: 30px; animation-delay: -2.5s; }
+.chip-float i { font-style: normal; color: var(--accent); }
+@keyframes bob { 50% { transform: translateY(-8px); } }
+
+/* Sections */
+section { padding-block: 76px; scroll-margin-top: 64px; }
+.band { background: var(--surface); border-block: 1px solid var(--line); }
+.sec-head { display: grid; gap: 10px; margin-bottom: 34px; max-width: 640px; }
+.sec-head .eyebrow { color: var(--warm); }
+h2 { font: 600 clamp(1.65rem, 3.4vw, 2.25rem)/1.15 var(--f-display); letter-spacing: -.025em; margin: 0; text-wrap: balance; }
+.sec-head p { margin: 0; color: var(--muted); font-size: 1.04rem; }
+
+/* Projects */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: -8px 0 26px; }
+.filters button {
+  font: 500 .88rem var(--f-body); padding: 7px 15px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); color: var(--muted);
+  transition: background .2s, color .2s, border-color .2s;
+}
+.filters button:hover { color: var(--ink); }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 24px;
+  display: flex; flex-direction: column; gap: 12px; min-width: 0; cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.card:hover {
+  transform: translateY(-4px); box-shadow: var(--shadow);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+}
+.card h3 { font: 600 1.14rem/1.3 var(--f-display); letter-spacing: -.01em; margin: 0; }
+.card p { margin: 0; color: var(--muted); font-size: .96rem; }
+.card.pop { animation: pop .45s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes pop { from { opacity: 0; transform: translateY(12px) scale(.98); } }
+.kind, .card .kind { font: 500 .72rem var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--warm); margin: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: auto 0 0; padding: 4px 0 0; list-style: none; }
+.chips li {
+  font: 500 .74rem var(--f-mono); padding: 4px 9px; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent);
+}
+.more {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 2px 0;
+  border: 0; background: none; cursor: pointer; font: 600 .9rem var(--f-body); color: var(--accent);
+}
+.more svg { width: 15px; height: 15px; transition: transform .2s ease; }
+.card:hover .more svg { transform: translateX(4px); }
+.featured {
+  grid-column: 1 / -1;
+  display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 36px; padding: 32px;
+  background: linear-gradient(135deg, var(--accent-soft), var(--surface) 72%);
+}
+.featured .main { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.featured h3 { font-size: 1.45rem; }
+.featured .chips li { background: var(--surface); border: 1px solid var(--line); }
+.ticks { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
+.ticks li { position: relative; padding-left: 22px; font-size: .97rem; }
+.ticks li::before {
+  content: ""; position: absolute; left: 3px; top: .58em; width: 8px; height: 8px;
+  border-radius: 2px; background: var(--warm); transform: rotate(45deg);
+}
+.upgrade {
+  display: flex; flex-direction: column; justify-content: center; gap: 22px; min-width: 0; align-self: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px;
+}
+.ver { display: flex; align-items: center; gap: 14px; font: 600 1.25rem var(--f-mono); }
+.ver .old { color: var(--muted); }
+.ver .new { color: var(--accent); }
+.arrow { flex: 1; min-width: 36px; height: 2px; position: relative; overflow: hidden;
+  background: linear-gradient(90deg, var(--line), var(--accent)); }
+.arrow::after { content: ""; position: absolute; top: -3px; left: -24%; width: 24%; height: 8px; border-radius: 4px;
+  background: var(--warm); animation: flow 2.6s ease-in-out infinite; }
+@keyframes flow { to { left: 100%; } }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 8px 14px; margin: 0; }
+.kv dt { font: 600 1.35rem/1.2 var(--f-display); text-align: right; font-variant-numeric: tabular-nums; }
+.kv dd { margin: 0; color: var(--muted); align-self: center; font-size: .95rem; }
+
+/* AI workflow */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; list-style: none; padding: 0; margin: 0; }
+.step { padding: 26px; border-radius: 18px; border: 1px solid var(--line); background: var(--bg); min-width: 0; }
+.step .n {
+  display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%;
+  font: 600 .82rem var(--f-mono); background: var(--accent-soft); color: var(--accent);
+}
+.step h3 { font: 600 1.12rem var(--f-display); margin: 16px 0 6px; }
+.step p { margin: 0; color: var(--muted); font-size: .96rem; }
+.ai-note { margin: 26px 0 0; color: var(--muted); max-width: 46em; }
+.ai-note b { color: var(--ink); }
+
+/* Beyond code */
+.beyond { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
+.b-item { border-top: 2px solid var(--line); padding-top: 18px; min-width: 0; transition: border-color .3s; }
+.b-item:hover { border-top-color: var(--accent); }
+.b-item .tag {
+  display: inline-block; font: 600 .7rem var(--f-mono); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--warm); background: var(--warm-soft); padding: 3px 8px; border-radius: 6px;
+}
+.b-item h3 { font: 600 1.08rem/1.3 var(--f-display); margin: 12px 0 6px; }
+.b-item p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+/* Path + skills */
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; }
+.two h2 { margin-bottom: 26px; }
+.timeline { list-style: none; margin: 0 0 0 7px; padding: 0; border-left: 2px solid var(--line); }
+.timeline li { position: relative; padding: 0 0 28px 26px; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before {
+  content: ""; position: absolute; left: -9px; top: 5px; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--bg); border: 3px solid var(--accent); box-sizing: border-box;
+}
+.timeline li.now::before { background: var(--accent); animation: pulse-a 2.4s ease-out infinite; }
+@keyframes pulse-a {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent); }
+  80%, 100% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 0%, transparent); }
+}
+.when { font: 500 .78rem var(--f-mono); color: var(--warm); }
+.timeline h3 { font: 600 1.06rem/1.35 var(--f-display); margin: 3px 0 4px; }
+.timeline p { margin: 0; color: var(--muted); font-size: .95rem; }
+.skills { display: grid; gap: 20px; }
+.skill h3 { font: 600 .74rem var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 9px; }
+.chips.plain li { background: var(--surface); border: 1px solid var(--line); color: var(--ink); font-size: .78rem; padding: 5px 10px; }
+.chips.plain li.hl { border-color: color-mix(in srgb, var(--warm) 60%, var(--line)); background: var(--warm-soft); }
+
+/* Contact */
+.contact-card {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 26px;
+  padding: 40px; border-radius: 24px;
+  background: linear-gradient(120deg, var(--accent-soft), var(--warm-soft));
+}
+.contact-card > div { min-width: 0; display: grid; gap: 10px; }
+.mail { font: 500 clamp(1rem, 2.6vw, 1.4rem) var(--f-mono); color: var(--ink); overflow-wrap: anywhere; user-select: all; margin: 0; }
+.contact-meta { margin: 0; color: var(--muted); }
+footer { padding-block: 28px 40px; color: var(--muted); font-size: .86rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
+
+/* Case study dialog */
+dialog.case {
+  border: 0; padding: 0; width: min(780px, calc(100% - 32px)); max-width: none; max-height: min(88vh, 960px);
+  border-radius: 22px; background: var(--surface); color: var(--ink); box-shadow: var(--shadow); overflow: hidden;
+}
+dialog.case[open] { animation: case-in .38s cubic-bezier(.2, .7, .2, 1); }
+@keyframes case-in { from { opacity: 0; transform: translateY(26px) scale(.98); } }
+dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.case-inner { max-height: inherit; overflow: auto; overscroll-behavior: contain; padding: 38px 40px 32px; }
+.case-bar { position: sticky; top: 0; height: 0; z-index: 2; }
+.case-close {
+  position: absolute; top: -20px; right: -26px; width: 38px; height: 38px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); box-shadow: var(--shadow);
+}
+.case-close svg { width: 16px; height: 16px; }
+.case-body h2 { margin: 8px 0 14px; padding-right: 30px; }
+.case-body h3 {
+  font: 600 .74rem var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+  margin: 28px 0 12px;
+}
+.case-lead { margin: 0; font-size: 1.06rem; color: var(--ink); max-width: 40em; }
+.case-body .ticks li { color: var(--ink); }
+.case-body .chips { margin-top: 0; }
+.result { margin-top: 28px; padding: 18px 20px; border-radius: 14px; background: var(--warm-soft); }
+.result h3 { margin: 0 0 6px; color: var(--warm); }
+.result p { margin: 0; }
+.case-foot {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px;
+  margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--line);
+}
+.case-foot .pos { font: 500 .8rem var(--f-mono); color: var(--muted); }
+.stack { display: grid; gap: 6px; margin: 24px 0 0; }
+.stack figcaption { font: 600 .74rem var(--f-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 6px; }
+.layer {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 16px;
+  padding: 11px 16px; border-radius: 12px; border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--accent) var(--t), var(--surface));
+  animation: layer-in .5s cubic-bezier(.2, .7, .2, 1) both; animation-delay: var(--d);
+}
+.layer b { font: 600 .98rem var(--f-display); }
+.layer span { color: var(--muted); font-size: .88rem; }
+.layer.os { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.layer.os span { color: var(--accent-ink); opacity: .85; }
+@keyframes layer-in { from { opacity: 0; transform: translateY(14px); } }
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 40;
+  transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
+  background: var(--ink); color: var(--bg); padding: 10px 18px; border-radius: 999px; font-size: .9rem;
+  transition: opacity .25s, transform .25s;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* Motion: load sequence for the hero, gentle rise for blocks entering view (always visible at rest) */
+.rise { animation: rise .8s cubic-bezier(.2, .7, .2, 1) both; }
+.d1 { animation-delay: .08s; } .d2 { animation-delay: .16s; } .d3 { animation-delay: .24s; } .d4 { animation-delay: .32s; }
+.reveal.in { animation: rise .75s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes rise { from { opacity: .2; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 920px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .featured { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .beyond { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .two { grid-template-columns: 1fr; gap: 56px; }
+}
+@media (max-width: 760px) { .nav-links { display: none; } }
+@media (max-width: 640px) {
+  .hero .wrap { grid-template-columns: 1fr; padding-block: 36px 52px; gap: 34px; }
+  .portrait { order: -1; width: min(230px, 64vw); }
+  .chip-float { font-size: .72rem; padding: 6px 10px; left: -22px; }
+  .chip-float.alt { right: -22px; }
+  .grid, .beyond { grid-template-columns: 1fr; }
+  .featured { padding: 22px; }
+  section { padding-block: 56px; }
+  .contact-card { padding: 26px; }
+  dialog.case {
+    width: 100%; max-height: 92vh; margin: auto 0 0; border-radius: 22px 22px 0 0;
+  }
+  .case-inner {
+    padding: 30px max(20px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
+  }
+  .case-close { top: -16px; right: -8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Extra motion and colour ---------- */
+.hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(color-mix(in srgb, var(--accent) 30%, transparent) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 70% 40%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 80% at 70% 40%, #000 20%, transparent 75%);
+  opacity: .55; animation: grid-pan 30s linear infinite;
+}
+@keyframes grid-pan { to { background-position: 22px 44px; } }
+.blob.c { width: 260px; height: 260px; background: color-mix(in srgb, var(--accent) 22%, var(--warm-soft)); top: 40%; left: 38%;
+  animation: drift 27s ease-in-out infinite alternate; opacity: .45; }
+.sheen {
+  background: linear-gradient(100deg, var(--ink) 0%, var(--ink) 38%, var(--accent) 55%, var(--warm) 70%, var(--ink) 88%);
+  background-size: 260% 100%; background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: sheen 7s ease-in-out 1s infinite alternate;
+}
+@keyframes sheen { to { background-position: 0 0; } }
+.roles { margin: -6px 0 18px; font: 500 clamp(1rem, 2.2vw, 1.2rem) var(--f-mono); color: var(--accent); min-height: 1.6em; }
+.roles-pre { color: var(--warm); }
+.caret { display: inline-block; width: .55em; height: 1.05em; margin-left: 2px; vertical-align: -.15em;
+  background: var(--warm); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.orbit { position: absolute; inset: -18px; border-radius: 50%; border: 1px dashed color-mix(in srgb, var(--accent) 40%, transparent);
+  animation: spin 40s linear infinite reverse; }
+.orbit i { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--warm); }
+.orbit i:nth-child(1) { top: -5px; left: calc(50% - 5px); }
+.orbit i:nth-child(2) { bottom: 14%; left: 4%; background: var(--accent); width: 8px; height: 8px; }
+.orbit i:nth-child(3) { top: 30%; right: -4px; width: 6px; height: 6px; }
+
+.marquee { overflow: hidden; border-block: 1px solid var(--line); background: var(--surface); padding-block: 14px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track { display: flex; gap: 14px; width: max-content; animation: marquee 42s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track span { font: 500 .86rem var(--f-mono); color: var(--muted); padding: 6px 14px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--bg); white-space: nowrap; }
+.marquee-track span:nth-child(4n+1) { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+.marquee-track span:nth-child(4n+3) { color: var(--warm); border-color: color-mix(in srgb, var(--warm) 40%, var(--line)); }
+@keyframes marquee { to { transform: translateX(calc(-50% - 7px)); } }
+
+.card { position: relative; overflow: hidden; }
+.card::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%);
+}
+.card:hover::after { opacity: 1; }
+.card > * { position: relative; z-index: 1; }
+.step { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.step:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); box-shadow: var(--shadow); }
+.step:hover .n { background: var(--accent); color: var(--accent-ink); }
+.step .n { transition: background .25s, color .25s; }
+.chips.plain li { transition: transform .2s ease, border-color .2s ease; }
+.chips.plain li:hover { transform: translateY(-2px); border-color: var(--accent); }
+.contact-card { position: relative; overflow: hidden; }
+.contact-card::before { content: ""; position: absolute; width: 340px; height: 340px; right: -100px; top: -140px; border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 20%, transparent); filter: blur(40px); animation: drift 16s ease-in-out infinite alternate; pointer-events: none; }
+.contact-card > * { position: relative; }
+@media (max-width: 640px) { .orbit { inset: -10px; } }
+@media (prefers-reduced-motion: reduce) { .sheen { color: var(--ink); background: none; } .caret { display: none; } }
+</style>
+
+<nav class="nav" aria-label="Navigation">
+  <div class="wrap">
+    <a class="brand" href="#top" data-go="top">Oussama<span>.</span>Bouchentouf</a>
+    <div class="nav-links">
+      <a href="#projets" data-go="projets"><span class="fr">Projets</span><span class="en">Projects</span></a>
+      <a href="#ia" data-go="ia"><span class="fr">IA</span><span class="en">AI</span></a>
+      <a href="#parcours" data-go="parcours"><span class="fr">Parcours</span><span class="en">Background</span></a>
+      <a href="#contact" data-go="contact">Contact</a>
+    </div>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" id="lang-fr" data-l="fr" aria-pressed="true">FR</button>
+      <button type="button" id="lang-en" data-l="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="blob a"></div>
+  <div class="blob b"></div>
+  <div class="blob c"></div>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow rise">
+        <span class="fr">Ingénieur logiciel · Oujda, Maroc</span>
+        <span class="en">Software engineer · Oujda, Morocco</span>
+      </p>
+      <h1 class="rise d1"><span class="sheen">Oussama Bouchentouf</span></h1>
+      <p class="roles rise d1" aria-hidden="true"><span class="roles-pre">&gt;</span> <span id="role"></span><span class="caret"></span></p>
+      <p class="lead rise d2 fr">Je développe des logiciels pour robots : Android embarqué, objets connectés, applications mobiles,
+        vidéo temps réel et ROS 2. Depuis 2023, chez AEVAweb, je travaille sur le robot compagnon Buddy.</p>
+      <p class="lead rise d2 en">I build software for robots: embedded Android, connected devices, mobile apps, real-time video
+        and ROS 2. Since 2023, at AEVAweb, I have been working on the Buddy companion robot.</p>
+      <div class="status rise d3">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="fr">En ce moment : Buddy passe à Android 14</span>
+        <span class="en">Currently: moving Buddy to Android 14</span>
+      </div>
+      <div class="actions rise d3">
+        <a class="btn primary" href="#projets" data-go="projets">
+          <span class="fr">Voir les projets</span><span class="en">See projects</span>
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn ghost" href="#contact" data-go="contact"><span class="fr">Me contacter</span><span class="en">Contact me</span></a>
+      </div>
+      <ul class="facts rise d4">
+        <li><b><span class="count" data-to="3">3</span> <span class="fr">ans</span><span class="en">years</span></b><span class="fr">en robotique</span><span class="en">in robotics</span></li>
+        <li><b>Android 14</b><span class="fr">plateforme</span><span class="en">platform</span></li>
+        <li><b>IoT</b><span class="fr">objets connectés</span><span class="en">connected devices</span></li>
+        <li><b>ROS 2</b><span class="fr">pilotage de robots</span><span class="en">robot control</span></li>
+      </ul>
+    </div>
+    <div class="portrait rise d2">
+      <div class="ring" aria-hidden="true"></div>
+      <div class="orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+      <img src="photo.jpg" alt="Oussama Bouchentouf">
+      <div class="chip-float alt" aria-hidden="true">ros2 <i>run</i></div>
+      <div class="chip-float" aria-hidden="true">adb <i>install</i> -r</div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-label="Technologies">
+  <div class="marquee-track">
+    <span>Android 14</span><span>Kotlin</span><span>Java</span><span>AIDL</span><span>ROS 2</span><span>IoT</span><span>Bluetooth LE</span><span>USB</span><span>Raspberry Pi</span><span>ESP32</span><span>Python</span><span>Swift</span><span>Node.js</span><span>Docker</span><span>MediaPipe</span><span>Claude Code</span>
+    <span aria-hidden="true">Android 14</span><span aria-hidden="true">Kotlin</span><span aria-hidden="true">Java</span><span aria-hidden="true">AIDL</span><span aria-hidden="true">ROS 2</span><span aria-hidden="true">IoT</span><span aria-hidden="true">Bluetooth LE</span><span aria-hidden="true">USB</span><span aria-hidden="true">Raspberry Pi</span><span aria-hidden="true">ESP32</span><span aria-hidden="true">Python</span><span aria-hidden="true">Swift</span><span aria-hidden="true">Node.js</span><span aria-hidden="true">Docker</span><span aria-hidden="true">MediaPipe</span><span aria-hidden="true">Claude Code</span>
+  </div>
+</div>
+
+<main>
+  <section id="projets">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><span class="fr">Projets</span><span class="en">Projects</span></p>
+        <h2><span class="fr">Ce sur quoi je travaille</span><span class="en">What I work on</span></h2>
+        <p class="fr">Un robot compagnon, son système, ses applications et les objets connectés autour. Les projets appartiennent à mon employeur et à ses clients : je présente mon rôle et les technologies, sans détail interne.</p>
+        <p class="en">A companion robot, its system, its apps and the connected devices around it. The projects belong to my employer and its clients: I describe my role and the technologies, without internal details.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filtrer les projets / Filter projects">
+        <button type="button" id="f-all" data-f="all" aria-pressed="true"><span class="fr">Tous</span><span class="en">All</span></button>
+        <button type="button" id="f-android" data-f="android" aria-pressed="false">Android</button>
+        <button type="button" id="f-robot" data-f="robot" aria-pressed="false"><span class="fr">Robotique</span><span class="en">Robotics</span></button>
+        <button type="button" id="f-iot" data-f="iot" aria-pressed="false">IoT</button>
+        <button type="button" id="f-mobile" data-f="mobile" aria-pressed="false">Mobile</button>
+      </div>
+
+      <div class="grid" id="grid">
+        <article class="card featured reveal" data-case="android14" data-cat="android robot iot">
+          <div class="main">
+            <p class="kind"><span class="fr">Système embarqué</span><span class="en">Embedded system</span></p>
+            <h3><span class="fr">Le robot Buddy passe à Android 14</span><span class="en">Moving the Buddy robot to Android 14</span></h3>
+            <p class="fr">Adaptation du logiciel d'un robot compagnon à une nouvelle plateforme sous Android 14, du système jusqu'aux applications.</p>
+            <p class="en">Adapting a companion robot's software to a new Android 14 platform, from the system up to the apps.</p>
+            <ul class="ticks">
+              <li><span class="fr">Services système, SDK et applications adaptés à Android 14 : stockage, permissions, exécution en arrière-plan</span>
+                <span class="en">System services, SDK and apps adapted to Android 14: storage, permissions, background execution</span></li>
+              <li><span class="fr">Chaîne de compilation modernisée : Gradle 8, Java 17</span>
+                <span class="en">Modernised build chain: Gradle 8, Java 17</span></li>
+              <li><span class="fr">Diagnostic de plantages complexes ; logiciel robuste quand un élément matériel manque</span>
+                <span class="en">Complex crashes diagnosed; software that holds up when a hardware part is missing</span></li>
+            </ul>
+            <ul class="chips">
+              <li>Java</li><li>Kotlin</li><li>AIDL</li><li>Gradle</li><li>adb</li><li>Android Profiler</li>
+            </ul>
+            <button type="button" class="more" data-open="android14">
+              <span class="fr">Lire l'étude de cas</span><span class="en">Read the case study</span>
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <div class="upgrade">
+            <div class="ver" aria-label="Android 14">
+              <span class="old">Android</span><span class="arrow" aria-hidden="true"></span><span class="new">14</span>
+            </div>
+            <dl class="kv">
+              <dt>OS</dt><dd><span class="fr">services système</span><span class="en">system services</span></dd>
+              <dt>SDK</dt><dd><span class="fr">API pour les applications</span><span class="en">API for apps</span></dd>
+              <dt>Apps</dt><dd><span class="fr">adaptées et testées sur le robot</span><span class="en">adapted and tested on the robot</span></dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="card reveal" data-case="telepresence" data-cat="mobile android">
+          <p class="kind"><span class="fr">Temps réel</span><span class="en">Real-time</span></p>
+          <h3><span class="fr">Téléprésence vidéo</span><span class="en">Video telepresence</span></h3>
+          <p class="fr">Appels vidéo entre une application mobile Android / iOS et le robot : SDK temps réel migré, applications allégées, jetons d'accès sécurisés.</p>
+          <p class="en">Video calls between an Android / iOS mobile app and the robot: real-time SDK migrated, lighter apps, secured access tokens.</p>
+          <ul class="chips"><li>Agora</li><li>Swift</li><li>Node.js</li><li>OAuth2</li></ul>
+          <button type="button" class="more" data-open="telepresence"><span class="fr">Voir le détail</span><span class="en">See details</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </article>
+
+        <article class="card reveal" data-case="ros" data-cat="robot iot">
+          <p class="kind"><span class="fr">Robotique</span><span class="en">Robotics</span></p>
+          <h3><span class="fr">Pilotage de robots sous ROS 2</span><span class="en">ROS 2 robot control</span></h3>
+          <p class="fr">Commande de robots depuis une tablette : joystick, caméra et micro en direct, capteurs, moteurs. Nœud Python sur Raspberry Pi, dans Docker.</p>
+          <p class="en">Controlling robots from a tablet: joystick, live camera and microphone, sensors, motors. Python node on a Raspberry Pi, in Docker.</p>
+          <ul class="chips"><li>ROS 2</li><li>DDS</li><li>Python</li><li>Docker</li><li>Raspberry Pi</li></ul>
+          <button type="button" class="more" data-open="ros"><span class="fr">Voir le détail</span><span class="en">See details</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </article>
+
+        <article class="card reveal" data-case="iot" data-cat="iot android">
+          <p class="kind"><span class="fr">IoT · Parc de robots</span><span class="en">IoT · Robot fleet</span></p>
+          <h3><span class="fr">Mises à jour à distance</span><span class="en">Remote updates</span></h3>
+          <p class="fr">Robots connectés mis à jour à distance : identification du matériel, échanges REST avec le serveur de gestion, vérification des micrologiciels.</p>
+          <p class="en">Connected robots updated remotely: hardware identification, REST exchanges with the management server, firmware checks.</p>
+          <ul class="chips"><li>IoT</li><li>REST</li><li>OTA</li><li>USB</li></ul>
+          <button type="button" class="more" data-open="iot"><span class="fr">Voir le détail</span><span class="en">See details</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </article>
+
+        <article class="card reveal" data-case="prog" data-cat="mobile android robot">
+          <p class="kind"><span class="fr">Éducation</span><span class="en">Education</span></p>
+          <h3><span class="fr">Programmation pour enfants</span><span class="en">Programming for children</span></h3>
+          <p class="fr">Programmation visuelle par blocs : l'enfant compose un scénario, le robot l'exécute en direct.</p>
+          <p class="en">Block-based visual programming: the child builds a scenario and the robot runs it live.</p>
+          <ul class="chips"><li>Android</li><li>iOS</li><li>BLE</li></ul>
+          <button type="button" class="more" data-open="prog"><span class="fr">Voir le détail</span><span class="en">See details</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </article>
+
+        <article class="card reveal" data-case="educ" data-cat="android robot">
+          <p class="kind"><span class="fr">Éducation et soin</span><span class="en">Education and care</span></p>
+          <h3><span class="fr">Applications éducatives</span><span class="en">Educational apps</span></h3>
+          <p class="fr">Jeux où le robot accompagne enfants et patients : motricité, langage, émotions, suivi de consignes.</p>
+          <p class="en">Games where the robot works with children and patients: motor skills, language, emotions, following instructions.</p>
+          <ul class="chips"><li>Android</li><li>MediaPipe</li><li>TTS</li></ul>
+          <button type="button" class="more" data-open="educ"><span class="fr">Voir le détail</span><span class="en">See details</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </article>
+
+        <article class="card reveal" data-case="tools" data-cat="android">
+          <p class="kind"><span class="fr">Qualité</span><span class="en">Quality</span></p>
+          <h3><span class="fr">Outils et qualité</span><span class="en">Tooling and quality</span></h3>
+          <p class="fr">Outils internes de vérification et de test, profilage des performances, revues de code et tests de non-régression.</p>
+          <p class="en">Internal verification and test tools, performance profiling, code reviews and regression tests.</p>
+          <ul class="chips"><li>Python</li><li>Profiling</li><li>SonarQube</li></ul>
+          <button type="button" class="more" data-open="tools"><span class="fr">Voir le détail</span><span class="en">See details</span>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="ia" class="band">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><span class="fr">Méthode</span><span class="en">How I work</span></p>
+        <h2><span class="fr">L'IA générative dans mon quotidien</span><span class="en">Generative AI in my daily work</span></h2>
+        <p class="fr">J'utilise Claude et Claude Code (Anthropic) chaque jour. L'IA accélère la lecture du code, le diagnostic et la documentation ; les décisions, la relecture et les tests restent les miens.</p>
+        <p class="en">I use Claude and Claude Code (Anthropic) every day. AI speeds up code reading, diagnosis and documentation; decisions, review and testing stay with me.</p>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="n">1</span>
+          <h3><span class="fr">Analyser</span><span class="en">Analyse</span></h3>
+          <p class="fr">Explorer une grande base de code, remonter d'un journal d'erreurs jusqu'à la cause et préparer un plan que je valide.</p>
+          <p class="en">Explore a large codebase, trace an error log back to its cause and prepare a plan that I approve.</p>
+        </li>
+        <li class="step reveal">
+          <span class="n">2</span>
+          <h3><span class="fr">Réaliser</span><span class="en">Build</span></h3>
+          <p class="fr">Écrire plus vite code, scripts et documentation, cadrés par des instructions de projet et des skills que j'ai rédigés.</p>
+          <p class="en">Write code, scripts and documentation faster, guided by project instructions and custom skills I wrote.</p>
+        </li>
+        <li class="step reveal">
+          <span class="n">3</span>
+          <h3><span class="fr">Vérifier</span><span class="en">Verify</span></h3>
+          <p class="fr">Je relis chaque modification, puis je compile, j'installe et je teste le parcours réel sur le robot avant de dire que ça marche.</p>
+          <p class="en">I review every change, then build, install and test the real user flow on the robot before calling it done.</p>
+        </li>
+      </ol>
+      <p class="ai-note reveal fr"><b>Résultat :</b> plus de temps pour la conception et les tests, et une documentation tenue à jour.</p>
+      <p class="ai-note reveal en"><b>The result:</b> more time for design and testing, and documentation that stays up to date.</p>
+    </div>
+  </section>
+
+  <section id="au-dela">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow"><span class="fr">Au-delà du code</span><span class="en">Beyond code</span></p>
+        <h2><span class="fr">Expliquer, chiffrer, transmettre</span><span class="en">Explain, estimate, pass it on</span></h2>
+        <p class="fr">Une partie de mon travail se lit plutôt qu'elle ne s'exécute.</p>
+        <p class="en">Part of my work is meant to be read rather than run.</p>
+      </div>
+      <div class="beyond">
+        <article class="b-item reveal">
+          <span class="tag">Docs</span>
+          <h3>Documentation</h3>
+          <p class="fr">Guides utilisateurs bilingues pour un public non technique, documentation fonctionnelle et d'architecture, dossiers de reprise.</p>
+          <p class="en">Bilingual user guides for non-technical readers, functional and architecture docs, handover packs.</p>
+        </article>
+        <article class="b-item reveal">
+          <span class="tag"><span class="fr">Analyse</span><span class="en">Analysis</span></span>
+          <h3><span class="fr">Analyse et chiffrage</span><span class="en">Analysis and estimates</span></h3>
+          <p class="fr">Analyses techniques et estimations de charge, validées avant la réalisation.</p>
+          <p class="en">Technical analyses and effort estimates, approved before the build starts.</p>
+        </article>
+        <article class="b-item reveal">
+          <span class="tag"><span class="fr">Rapports</span><span class="en">Reports</span></span>
+          <h3><span class="fr">Rapports et spécifications</span><span class="en">Reports and specs</span></h3>
+          <p class="fr">Rapports de performance et spécifications fonctionnelles partagées avec les équipes web.</p>
+          <p class="en">Performance reports and functional specifications shared with the web teams.</p>
+        </article>
+        <article class="b-item reveal">
+          <span class="tag"><span class="fr">Équipe</span><span class="en">Team</span></span>
+          <h3><span class="fr">Transmission</span><span class="en">Mentoring</span></h3>
+          <p class="fr">Accompagnement de développeurs juniors et de stagiaires, revues de code, partage des bonnes pratiques.</p>
+          <p class="en">Support for junior developers and interns, code reviews, sharing good practice.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="parcours" class="band">
+    <div class="wrap two">
+      <div class="reveal">
+        <h2><span class="fr">Parcours</span><span class="en">Background</span></h2>
+        <ol class="timeline">
+          <li class="now">
+            <span class="when"><span class="fr">Sept. 2023 – aujourd'hui</span><span class="en">Sept. 2023 – present</span></span>
+            <h3><span class="fr">Ingénieur d'études et développement, AEVAweb</span><span class="en">Software Development Engineer, AEVAweb</span></h3>
+            <p class="fr">Oujda, CDI. Logiciel du robot compagnon Buddy : Android embarqué, IoT, applications mobiles.</p>
+            <p class="en">Oujda, permanent contract. Software for the Buddy companion robot: embedded Android, IoT, mobile apps.</p>
+          </li>
+          <li>
+            <span class="when">2018 – 2023</span>
+            <h3><span class="fr">Ingénieur d'État en Génie Informatique</span><span class="en">State Engineering Degree, Computer Engineering</span></h3>
+            <p class="fr">ENSAO, Université Mohammed Premier, Oujda.</p>
+            <p class="en">ENSAO, Mohammed First University, Oujda.</p>
+          </li>
+          <li>
+            <span class="when">2018</span>
+            <h3><span class="fr">Baccalauréat Sciences Physiques, mention Bien</span><span class="en">Baccalaureate in Physical Sciences, with honours</span></h3>
+            <p class="fr">Lycée Mohammed VI, Oujda (option française).</p>
+            <p class="en">Mohammed VI High School, Oujda (French-language track).</p>
+          </li>
+        </ol>
+      </div>
+      <div class="reveal">
+        <h2><span class="fr">Compétences</span><span class="en">Skills</span></h2>
+        <div class="skills">
+          <div class="skill">
+            <h3>Android</h3>
+            <ul class="chips plain"><li>Java</li><li>Kotlin</li><li>AIDL</li><li><span class="fr">Services système</span><span class="en">System services</span></li><li>Gradle</li><li>adb · logcat</li><li>Android Profiler</li></ul>
+          </div>
+          <div class="skill">
+            <h3><span class="fr">Robotique, embarqué et IoT</span><span class="en">Robotics, embedded and IoT</span></h3>
+            <ul class="chips plain"><li>ROS 2</li><li>DDS</li><li>Raspberry Pi 5</li><li>Arduino</li><li>ESP32</li><li>Bluetooth LE</li><li>USB</li><li>Wi-Fi</li><li><span class="fr">Capteurs</span><span class="en">Sensors</span></li><li>OTA</li></ul>
+          </div>
+          <div class="skill">
+            <h3><span class="fr">Mobile et web</span><span class="en">Mobile and web</span></h3>
+            <ul class="chips plain"><li>Swift</li><li>SwiftUI</li><li>Node.js</li><li>Angular</li><li>Ionic</li><li>REST</li><li>OAuth2</li></ul>
+          </div>
+          <div class="skill">
+            <h3><span class="fr">Temps réel et vision</span><span class="en">Real-time and vision</span></h3>
+            <ul class="chips plain"><li>Agora RTC/RTM</li><li>MediaPipe</li><li>OpenCV</li><li>CameraX</li></ul>
+          </div>
+          <div class="skill">
+            <h3><span class="fr">Outils et méthodes</span><span class="en">Tools and methods</span></h3>
+            <ul class="chips plain"><li>Python</li><li>Git</li><li>GitLab CI/CD</li><li>Docker</li><li>Linux</li><li>SonarQube</li><li>Scrum</li></ul>
+          </div>
+          <div class="skill">
+            <h3><span class="fr">IA générative</span><span class="en">Generative AI</span></h3>
+            <ul class="chips plain"><li class="hl">Claude</li><li class="hl">Claude Code</li><li class="hl"><span class="fr">Skills personnalisés</span><span class="en">Custom skills</span></li><li class="hl"><span class="fr">Instructions de projet</span><span class="en">Project instructions</span></li><li class="hl"><span class="fr">Ingénierie de prompts</span><span class="en">Prompt engineering</span></li></ul>
+          </div>
+          <div class="skill">
+            <h3><span class="fr">Langues</span><span class="en">Languages</span></h3>
+            <ul class="chips plain">
+              <li><span class="fr">Arabe : maternelle</span><span class="en">Arabic: native</span></li>
+              <li><span class="fr">Français : bon niveau</span><span class="en">French: proficient</span></li>
+              <li><span class="fr">Anglais : bon niveau</span><span class="en">English: proficient</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2><span class="fr">Parlons de votre projet</span><span class="en">Let's talk about your project</span></h2>
+          <p class="mail" id="mail">o.bouchentouf40@gmail.com</p>
+          <p class="contact-meta"><span class="fr">Oujda, Maroc · ouvert aux postes sur site et à distance</span><span class="en">Oujda, Morocco · open to on-site and remote roles</span></p>
+        </div>
+        <button type="button" class="btn primary" id="copy-mail">
+          <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="8.5" height="8.5" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M10.5 3.2V3a1.5 1.5 0 0 0-1.5-1.5H3.5A1.5 1.5 0 0 0 2 3v5.5A1.5 1.5 0 0 0 3.5 10h.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <span class="fr">Copier l'adresse</span><span class="en">Copy address</span>
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Oussama Bouchentouf</span>
+    <span class="fr">Android · Systèmes embarqués · Robotique · IoT</span>
+    <span class="en">Android · Embedded systems · Robotics · IoT</span>
+  </div>
+</footer>
+
+<dialog class="case" id="case" aria-labelledby="case-title">
+  <div class="case-inner" id="case-inner">
+    <div class="case-bar">
+      <button type="button" class="case-close" id="case-close" aria-label="Fermer">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="case-body" id="case-body"></div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var lang = 'fr';
+  var langButtons = document.querySelectorAll('.lang button');
+
+  /* ---------- Case studies ---------- */
+  var CASES = {
+    android14: {
+      kind: { fr: "Système embarqué", en: "Embedded system" },
+      title: { fr: "Le robot Buddy passe à Android 14", en: "Moving the Buddy robot to Android 14" },
+      context: {
+        fr: "Le robot compagnon Buddy change de plateforme matérielle et passe à Android 14. Tout le logiciel du robot doit suivre : système, kit de développement et applications.",
+        en: "The Buddy companion robot is moving to a new hardware platform running Android 14. All of the robot's software has to follow: system, development kit and apps."
+      },
+      diagram: true,
+      challenges: {
+        fr: ["Android 14 restreint l'accès au stockage, encadre les services de premier plan et limite les processus en arrière-plan.",
+             "Une chaîne de compilation récente (Gradle 8, Java 17) s'impose à tous les projets.",
+             "Les tests se font souvent sans tout le matériel du robot."],
+        en: ["Android 14 restricts storage access, tightens foreground services and limits background processes.",
+             "A recent build chain (Gradle 8, Java 17) applies to every project.",
+             "Testing often happens without all of the robot's hardware."]
+      },
+      work: {
+        fr: ["Adaptation des services système, du kit de développement et des applications.",
+             "Migration de la chaîne de compilation de chaque projet.",
+             "Diagnostic de plantages complexes à partir des journaux système, jusqu'aux plantages natifs et aux bugs intermittents.",
+             "Logiciel rendu robuste quand un élément matériel est absent ou en panne.",
+             "Mesure de la consommation processeur et mémoire, puis optimisation."],
+        en: ["Adapted the system services, the development kit and the apps.",
+             "Migrated every project's build chain.",
+             "Diagnosed complex crashes from system logs, including native crashes and intermittent bugs.",
+             "Made the software hold up when a hardware part is missing or faulty.",
+             "Measured CPU and memory use, then optimised."]
+      },
+      result: {
+        fr: "Des applications adaptées et testées sur la nouvelle plateforme, avec leur documentation.",
+        en: "Apps adapted and tested on the new platform, with their documentation."
+      },
+      stack: ["Android 14", "Java", "Kotlin", "AIDL", "Gradle", "adb", "logcat", "Android Studio Profiler"]
+    },
+    telepresence: {
+      kind: { fr: "Temps réel", en: "Real-time" },
+      title: { fr: "Téléprésence vidéo", en: "Video telepresence" },
+      context: {
+        fr: "Un utilisateur appelle le robot en vidéo depuis une tablette ou un téléphone, grâce à une application mobile et un serveur qui délivre les jetons d'accès.",
+        en: "A user video-calls the robot from a tablet or phone, through a mobile app and a server that issues access tokens."
+      },
+      work: {
+        fr: ["Migration d'un SDK de communication temps réel côté robot, mobile et serveur.",
+             "Applications allégées et mises en conformité avec les exigences récentes des stores.",
+             "Corrections de plantages natifs et de fuites mémoire.",
+             "Sécurisation des jetons d'accès : OAuth2, Android Keystore, iOS Keychain."],
+        en: ["Migrated a real-time communication SDK on the robot, mobile and server sides.",
+             "Made the apps lighter and compliant with recent store requirements.",
+             "Fixed native crashes and memory leaks.",
+             "Secured access tokens: OAuth2, Android Keystore, iOS Keychain."]
+      },
+      result: {
+        fr: "Une chaîne d'appel vidéo à jour, sur Android, iOS et serveur.",
+        en: "An up-to-date video call chain across Android, iOS and the server."
+      },
+      stack: ["Agora RTC/RTM", "Java", "Swift", "Node.js", "OAuth2"]
+    },
+    ros: {
+      kind: { fr: "Robotique", en: "Robotics" },
+      title: { fr: "Pilotage de robots sous ROS 2", en: "ROS 2 robot control" },
+      context: {
+        fr: "Piloter un ou plusieurs robots sous ROS 2 depuis une tablette, sur le réseau local.",
+        en: "Control one or more ROS 2 robots from a tablet over the local network."
+      },
+      work: {
+        fr: ["Application robot, application tablette et nœud Python sur Raspberry Pi, conteneurisé avec Docker.",
+             "Découverte des robots sur le réseau, pilotage au joystick, flux caméra et micro en direct.",
+             "Capteurs de distance, commande des moteurs, scénarios et comportements.",
+             "Guides utilisateurs bilingues pour un public non technique."],
+        en: ["Robot app, tablet app and a Python node on a Raspberry Pi, containerised with Docker.",
+             "Robot discovery on the network, joystick control, live camera and microphone streams.",
+             "Distance sensors, motor control, scenarios and behaviours.",
+             "Bilingual user guides for non-technical readers."]
+      },
+      result: {
+        fr: "Un système de pilotage complet, documenté pour des utilisateurs non techniques.",
+        en: "A complete control system, documented for non-technical users."
+      },
+      stack: ["ROS 2", "DDS", "Java", "Python", "Docker", "Raspberry Pi"]
+    },
+    iot: {
+      kind: { fr: "IoT · Parc de robots", en: "IoT · Robot fleet" },
+      title: { fr: "Mises à jour à distance", en: "Remote updates" },
+      context: {
+        fr: "Un parc de robots connectés reçoit ses applications et ses micrologiciels à distance, depuis un serveur de gestion.",
+        en: "A fleet of connected robots receives its apps and firmware remotely from a management server."
+      },
+      work: {
+        fr: ["Identification du matériel de chaque robot.",
+             "Informations du robot remontées au serveur pour livrer la bonne mise à jour.",
+             "Vérification de l'intégrité des micrologiciels.",
+             "Spécifications fonctionnelles et règles de compatibilité rédigées avec l'équipe web."],
+        en: ["Identified each robot's hardware.",
+             "Sent robot information to the server so it delivers the right update.",
+             "Checked firmware integrity.",
+             "Wrote functional specifications and compatibility rules with the web team."]
+      },
+      result: {
+        fr: "Une base commune entre l'équipe robot et l'équipe web pour livrer la bonne mise à jour au bon robot.",
+        en: "Shared ground between the robot and web teams to deliver the right update to the right robot."
+      },
+      stack: ["Android", "Java", "REST", "OTA", "USB"]
+    },
+    prog: {
+      kind: { fr: "Éducation", en: "Education" },
+      title: { fr: "Programmation pour enfants", en: "Programming for children" },
+      context: {
+        fr: "Une application pour apprendre la programmation aux enfants avec le robot.",
+        en: "An app that teaches children programming with the robot."
+      },
+      work: {
+        fr: ["Programmation visuelle par blocs : scénarios, boucles, synthèse vocale.",
+             "Envoi du programme au robot et exécution en direct.",
+             "Versions Android et iOS, liaison Bluetooth avec le robot.",
+             "Adaptation à Android 14 et corrections de stabilité."],
+        en: ["Block-based visual programming: scenarios, loops, text-to-speech.",
+             "Sends the program to the robot and runs it live.",
+             "Android and iOS versions, Bluetooth link to the robot.",
+             "Adapted to Android 14, with stability fixes."]
+      },
+      result: {
+        fr: "Un support concret pour initier les enfants à l'algorithmique.",
+        en: "A hands-on way to introduce children to algorithmic thinking."
+      },
+      stack: ["Android", "iOS", "Java", "Swift", "BLE", "TTS"]
+    },
+    educ: {
+      kind: { fr: "Éducation et soin", en: "Education and care" },
+      title: { fr: "Applications éducatives", en: "Educational apps" },
+      context: {
+        fr: "Des jeux où le robot accompagne des enfants ou des patients en établissement : motricité, langage, émotions, suivi de consignes.",
+        en: "Games where the robot works with children or patients in schools and care homes: motor skills, language, emotions, following instructions."
+      },
+      work: {
+        fr: ["Jeux de mouvement, de langage et d'émotions.",
+             "Reconnaissance de gestes par la caméra.",
+             "Reconnaissance et synthèse vocales, applications multilingues.",
+             "Adaptation à Android 14 : stockage, voix, caméra."],
+        en: ["Movement, language and emotion games.",
+             "Gesture recognition with the camera.",
+             "Speech recognition and text-to-speech, multilingual apps.",
+             "Adapted to Android 14: storage, voice, camera."]
+      },
+      result: {
+        fr: "Des applications utilisées en établissement, prêtes pour la nouvelle plateforme.",
+        en: "Apps used in schools and care settings, ready for the new platform."
+      },
+      stack: ["Android", "Java", "Kotlin", "MediaPipe", "TTS", "Speech recognition"]
+    },
+    tools: {
+      kind: { fr: "Qualité", en: "Quality" },
+      title: { fr: "Outils et qualité", en: "Tooling and quality" },
+      context: {
+        fr: "Des outils pour aller plus vite et livrer sans régression.",
+        en: "Tools to move faster and ship without regressions."
+      },
+      work: {
+        fr: ["Outils internes de vérification et de test, écrits en Python.",
+             "Profilage des applications et rapports de performance.",
+             "Tests unitaires, d'intégration et de non-régression ; SonarQube ; revues de code."],
+        en: ["Internal verification and test tools, written in Python.",
+             "App profiling and performance reports.",
+             "Unit, integration and regression tests; SonarQube; code reviews."]
+      },
+      result: {
+        fr: "Moins d'installations à l'aveugle et des livraisons vérifiées.",
+        en: "Fewer blind installs and verified deliveries."
+      },
+      stack: ["Python", "SonarQube", "JUnit", "adb"]
+    }
+  };
+  var ORDER = ["android14", "telepresence", "ros", "iot", "prog", "educ", "tools"];
+  var T = {
+    context: { fr: "Contexte", en: "Context" },
+    challenges: { fr: "Les défis", en: "Challenges" },
+    work: { fr: "Ce que j'ai fait", en: "What I did" },
+    result: { fr: "Résultat", en: "Outcome" },
+    stack: { fr: "Technologies", en: "Stack" },
+    next: { fr: "Projet suivant", en: "Next project" },
+    close: { fr: "Fermer", en: "Close" },
+    arch: { fr: "Couches logicielles d'un robot Android", en: "Software layers of an Android robot" }
+  };
+  var LAYERS = [
+    { b: { fr: "Applications", en: "Apps" }, s: { fr: "jeux, éducation, téléprésence", en: "games, education, telepresence" }, t: "6%" },
+    { b: { fr: "Kit de développement", en: "Development kit" }, s: { fr: "API du robot pour les applications", en: "Robot API for apps" }, t: "12%" },
+    { b: { fr: "Services système", en: "System services" }, s: { fr: "voix, vision, mouvement, matériel", en: "voice, vision, motion, hardware" }, t: "18%" },
+    { b: { fr: "Interface du robot", en: "Robot interface" }, s: { fr: "accueil, visage, menu", en: "home, face, menu" }, t: "26%" },
+    { b: { fr: "Android 14", en: "Android 14" }, s: { fr: "nouvelle plateforme", en: "new platform" }, t: "100%", os: true },
+    { b: { fr: "Matériel", en: "Hardware" }, s: { fr: "carte, capteurs, moteurs, caméras", en: "board, sensors, motors, cameras" }, t: "34%" }
+  ];
+
+  var dialog = document.getElementById('case');
+  var body = document.getElementById('case-body');
+  var inner = document.getElementById('case-inner');
+  var current = null;
+
+  function list(items) {
+    return '<ul class="ticks">' + items.map(function (x) { return '<li>' + x + '</li>'; }).join('') + '</ul>';
+  }
+  function diagram(l) {
+    var n = LAYERS.length;
+    return '<figure class="stack"><figcaption>' + T.arch[l] + '</figcaption>' + LAYERS.map(function (x, i) {
+      return '<div class="layer' + (x.os ? ' os' : '') + '" style="--t:' + x.t + ';--d:' + ((n - 1 - i) * 0.08 + 0.15).toFixed(2) + 's"><b>' +
+        x.b[l] + '</b><span>' + x.s[l] + '</span></div>';
+    }).join('') + '</figure>';
+  }
+  function render(id) {
+    var c = CASES[id], l = lang, i = ORDER.indexOf(id), nextId = ORDER[(i + 1) % ORDER.length];
+    var h = '<p class="kind">' + c.kind[l] + '</p><h2 id="case-title">' + c.title[l] + '</h2>';
+    h += '<h3>' + T.context[l] + '</h3><p class="case-lead">' + c.context[l] + '</p>';
+    if (c.diagram) h += diagram(l);
+    if (c.challenges) h += '<h3>' + T.challenges[l] + '</h3>' + list(c.challenges[l]);
+    h += '<h3>' + T.work[l] + '</h3>' + list(c.work[l]);
+    h += '<div class="result"><h3>' + T.result[l] + '</h3><p>' + c.result[l] + '</p></div>';
+    h += '<h3>' + T.stack[l] + '</h3><ul class="chips">' + c.stack.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ul>';
+    h += '<div class="case-foot"><span class="pos">' + (i + 1) + ' / ' + ORDER.length + '</span>' +
+      '<button type="button" class="btn ghost" id="case-next" data-next="' + nextId + '">' + T.next[l] + ' : ' + CASES[nextId].title[l] +
+      ' <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>';
+    body.innerHTML = h;
+    document.getElementById('case-close').setAttribute('aria-label', T.close[l]);
+  }
+  function setHash(h) { try { history.replaceState(null, '', '#' + h); } catch (e) {} }
+  function openCase(id) {
+    if (!CASES[id]) return;
+    current = id;
+    render(id);
+    inner.scrollTop = 0;
+    if (!dialog.open) {
+      try { dialog.showModal(); } catch (e) { dialog.setAttribute('open', ''); }
+    }
+    setHash('projet-' + id);
+  }
+  function closeCase() { if (dialog.open) dialog.close(); }
+  dialog.addEventListener('close', function () { current = null; setHash(lang); });
+  dialog.addEventListener('click', function (e) {
+    if (e.target === dialog) { closeCase(); return; }
+    var nx = e.target.closest('#case-next');
+    if (nx) openCase(nx.dataset.next);
+  });
+  document.getElementById('case-close').addEventListener('click', closeCase);
+
+  document.querySelectorAll('.card[data-case]').forEach(function (card) {
+    card.addEventListener('click', function () {
+      var sel = window.getSelection && String(window.getSelection());
+      if (sel) return;
+      openCase(card.dataset.case);
+    });
+  });
+
+  /* ---------- Language ---------- */
+  function setLang(l) {
+    lang = l;
+    root.classList.toggle('l-en', l === 'en');
+    root.lang = l;
+    langButtons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.l === l)); });
+    try { localStorage.setItem('portfolio-lang', l); } catch (e) {}
+    if (current) render(current);
+  }
+  var start = null;
+  var h0 = location.hash.slice(1);
+  if (h0 === 'en' || h0 === 'fr') start = h0;
+  if (!start) { try { start = localStorage.getItem('portfolio-lang'); } catch (e) {} }
+  if (start !== 'en' && start !== 'fr') {
+    start = (navigator.language || 'fr').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en';
+  }
+  setLang(start);
+  langButtons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.l); }); });
+
+  function route() {
+    var x = location.hash.slice(1);
+    if (x === 'en' || x === 'fr') { setLang(x); return; }
+    if (x.indexOf('projet-') === 0) openCase(x.slice(7));
+  }
+  window.addEventListener('hashchange', route);
+  if (h0.indexOf('projet-') === 0) openCase(h0.slice(7));
+
+  /* ---------- Filters ---------- */
+  var filterButtons = document.querySelectorAll('.filters button');
+  var cards = document.querySelectorAll('#grid .card');
+  filterButtons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.dataset.f;
+      filterButtons.forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+      cards.forEach(function (c) {
+        var show = f === 'all' || (' ' + c.dataset.cat + ' ').indexOf(' ' + f + ' ') !== -1;
+        c.hidden = !show;
+        c.classList.remove('pop');
+        if (show) { void c.offsetWidth; c.classList.add('pop'); }
+      });
+    });
+  });
+
+  /* ---------- Smooth in-page navigation ---------- */
+  document.querySelectorAll('a[data-go]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var t = document.getElementById(a.dataset.go);
+      if (!t) return;
+      e.preventDefault();
+      t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  /* ---------- Copy email ---------- */
+  var toastEl = document.getElementById('toast');
+  var timer;
+  function toast(msg) {
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(timer);
+    timer = setTimeout(function () { toastEl.classList.remove('show'); }, 2200);
+  }
+  var mail = document.getElementById('mail');
+  document.getElementById('copy-mail').addEventListener('click', function () {
+    var en = lang === 'en';
+    function fallback() {
+      var r = document.createRange();
+      r.selectNodeContents(mail);
+      var s = window.getSelection();
+      s.removeAllRanges();
+      s.addRange(r);
+      toast(en ? 'Address selected: press Ctrl+C to copy it' : 'Adresse sélectionnée : faites Ctrl+C pour la copier');
+    }
+    try {
+      navigator.clipboard.writeText(mail.textContent.trim()).then(function () {
+        toast(en ? 'Email address copied' : 'Adresse copiée');
+      }, fallback);
+    } catch (e) { fallback(); }
+  });
+
+  /* ---------- Reading progress ---------- */
+  var bar = document.getElementById('progress');
+  var ticking = false;
+  function progress() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(progress); }
+  }, { passive: true });
+  progress();
+
+  /* ---------- Reveal on scroll ---------- */
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- Typed roles ---------- */
+  var ROLES = {
+    fr: ["Android embarqué", "Robotique et ROS 2", "Objets connectés (IoT)", "Applications mobiles", "IA générative au quotidien"],
+    en: ["Embedded Android", "Robotics and ROS 2", "Connected devices (IoT)", "Mobile apps", "Generative AI every day"]
+  };
+  var roleEl = document.getElementById('role');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ri = 0, ci = 0, del = false;
+  function typeStep() {
+    var words = ROLES[lang], w = words[ri % words.length];
+    if (reduce) { roleEl.textContent = words.join(' · '); return; }
+    ci += del ? -1 : 1;
+    roleEl.textContent = w.slice(0, ci);
+    var wait = del ? 35 : 70;
+    if (!del && ci >= w.length) { del = true; wait = 1600; }
+    else if (del && ci <= 0) { del = false; ri++; wait = 300; }
+    setTimeout(typeStep, wait);
+  }
+  if (roleEl) typeStep();
+  langButtons.forEach(function (b) { b.addEventListener('click', function () { ci = 0; del = false; if (reduce) typeStep(); }); });
+
+  /* ---------- Card spotlight ---------- */
+  document.querySelectorAll('.card').forEach(function (c) {
+    c.addEventListener('pointermove', function (e) {
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* ---------- Count up ---------- */
+  if (!reduce) document.querySelectorAll('.count').forEach(function (el) {
+    var to = +el.dataset.to, t0 = null;
+    el.textContent = '0';
+    function tick(t) {
+      if (!t0) t0 = t;
+      var p = Math.min(1, (t - t0) / 1200);
+      el.textContent = String(Math.round(to * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    setTimeout(function () { requestAnimationFrame(tick); }, 500);
+  });
+})();
+</script>
+
+</body></html>
