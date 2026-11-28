@@ -1,7 +1,7 @@
 <!doctype html><html lang="fr"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Oussama Bouchentouf</title>
 <script>try{var t=localStorage.getItem('portfolio-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
-<meta name="description" content="Oussama Bouchentouf, ingénieur logiciel confirmé : Android, iOS, systèmes embarqués, robotique et IoT. Portfolio bilingue français / anglais.">
+<meta name="description" content="Oussama Bouchentouf, ingénieur logiciel confirmé : Android, iOS, systèmes embarqués, robotique et IoT. Portfolio bilingue français / anglais.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@500;600;700&display=swap">
@@ -316,7 +316,7 @@ dialog.case {
 dialog.case[open] { animation: case-in .38s cubic-bezier(.2, .7, .2, 1); }
 @keyframes case-in { from { opacity: 0; transform: translateY(26px) scale(.98); } }
 dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
-.case-inner { max-height: inherit; overflow: auto; overscroll-behavior: contain; padding: 38px 40px 32px; }
+.case-inner { max-height: inherit; overflow: auto; overscroll-behavior: contain; padding: 38px 40px 32px; box-sizing: border-box; }
 .case-bar { position: sticky; top: 0; height: 0; z-index: 2; }
 .case-close {
   position: absolute; top: -20px; right: -26px; width: 38px; height: 38px; border-radius: 50%;
@@ -376,6 +376,12 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
   .two { grid-template-columns: 1fr; gap: 56px; }
 }
 @media (max-width: 760px) { .nav-links { display: none; } }
+.portrait img { box-sizing: border-box; }
+@media (max-width: 380px) {
+  .nav .wrap { gap: 8px; }
+  .brand { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .theme-btn { margin-left: 2px; }
+}
 @media (max-width: 640px) {
   .hero .wrap { grid-template-columns: 1fr; padding-block: 36px 52px; gap: 34px; }
   .portrait { order: -1; width: min(230px, 64vw); }
@@ -494,13 +500,13 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
       </p>
       <h1 class="rise d1"><span class="sheen">Oussama Bouchentouf</span></h1>
       <p class="roles rise d1" aria-hidden="true"><span class="roles-pre">&gt;</span> <span id="role"></span><span class="caret"></span></p>
-      <p class="lead rise d2 fr">Je développe des logiciels pour robots : Android embarqué, objets connectés, applications mobiles iOS (Swift, SwiftUI) et Android,
+      <p class="lead rise d2 fr">Je développe des logiciels pour robots : Android embarqué, objets connectés, applications mobiles iOS (Swift, SwiftUI) et Android,
         vidéo temps réel et ROS 2. Depuis 2023, chez AEVAweb, je travaille sur le robot compagnon Buddy.</p>
       <p class="lead rise d2 en">I build software for robots: embedded Android, connected devices, iOS (Swift, SwiftUI) and Android mobile apps, real-time video
         and ROS 2. Since 2023, at AEVAweb, I have been working on the Buddy companion robot.</p>
       <div class="status rise d3">
         <span class="dot" aria-hidden="true"></span>
-        <span class="fr">En ce moment : Buddy passe à Android 14</span>
+        <span class="fr">En ce moment : Buddy passe à Android 14</span>
         <span class="en">Currently: moving Buddy to Android 14</span>
       </div>
       <div class="actions rise d3">
@@ -540,7 +546,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
       <div class="sec-head reveal">
         <p class="eyebrow"><span class="fr">Projets</span><span class="en">Projects</span></p>
         <h2><span class="fr">Ce sur quoi je travaille</span><span class="en">What I work on</span></h2>
-        <p class="fr">Un robot compagnon, son système, ses applications et les objets connectés autour. Les projets appartiennent à mon employeur et à ses clients : je présente mon rôle et les technologies, sans détail interne.</p>
+        <p class="fr">Un robot compagnon, son système, ses applications et les objets connectés autour. Les projets appartiennent à mon employeur et à ses clients : je présente mon rôle et les technologies, sans détail interne.</p>
         <p class="en">A companion robot, its system, its apps and the connected devices around it. The projects belong to my employer and its clients: I describe my role and the technologies, without internal details.</p>
       </div>
 
@@ -560,11 +566,11 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
             <p class="fr">Adaptation du logiciel d'un robot compagnon à une nouvelle plateforme sous Android 14, du système jusqu'aux applications.</p>
             <p class="en">Adapting a companion robot's software to a new Android 14 platform, from the system up to the apps.</p>
             <ul class="ticks">
-              <li><span class="fr">Services système, SDK et applications adaptés à Android 14 : stockage, permissions, exécution en arrière-plan</span>
+              <li><span class="fr">Services système, SDK et applications adaptés à Android 14 : stockage, permissions, exécution en arrière-plan</span>
                 <span class="en">System services, SDK and apps adapted to Android 14: storage, permissions, background execution</span></li>
-              <li><span class="fr">Chaîne de compilation modernisée : Gradle 8, Java 17</span>
+              <li><span class="fr">Chaîne de compilation modernisée : Gradle 8, Java 17</span>
                 <span class="en">Modernised build chain: Gradle 8, Java 17</span></li>
-              <li><span class="fr">Diagnostic de plantages complexes ; logiciel robuste quand un élément matériel manque</span>
+              <li><span class="fr">Diagnostic de plantages complexes ; logiciel robuste quand un élément matériel manque</span>
                 <span class="en">Complex crashes diagnosed; software that holds up when a hardware part is missing</span></li>
             </ul>
             <ul class="chips">
@@ -590,7 +596,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
         <article class="card reveal" data-case="telepresence" data-cat="mobile android">
           <p class="kind"><span class="fr">Temps réel</span><span class="en">Real-time</span></p>
           <h3><span class="fr">Téléprésence vidéo</span><span class="en">Video telepresence</span></h3>
-          <p class="fr">Appels vidéo entre le robot et une application mobile iOS (SwiftUI, Combine) et Android : SDK temps réel migré, applications allégées, jetons d'accès sécurisés.</p>
+          <p class="fr">Appels vidéo entre le robot et une application mobile iOS (SwiftUI, Combine) et Android : SDK temps réel migré, applications allégées, jetons d'accès sécurisés.</p>
           <p class="en">Video calls between the robot and an iOS (SwiftUI, Combine) and Android mobile app: real-time SDK migrated, lighter apps, secured access tokens.</p>
           <ul class="chips"><li>Agora</li><li>SwiftUI</li><li>Combine</li><li>Node.js</li><li>OAuth2</li></ul>
           <button type="button" class="more" data-open="telepresence"><span class="fr">Voir le détail</span><span class="en">See details</span>
@@ -600,7 +606,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
         <article class="card reveal" data-case="ros" data-cat="robot iot">
           <p class="kind"><span class="fr">Robotique</span><span class="en">Robotics</span></p>
           <h3><span class="fr">Pilotage de robots sous ROS 2</span><span class="en">ROS 2 robot control</span></h3>
-          <p class="fr">Commande de robots depuis une tablette : joystick, caméra et micro en direct, capteurs, moteurs. Nœud Python sur Raspberry Pi, dans Docker.</p>
+          <p class="fr">Commande de robots depuis une tablette : joystick, caméra et micro en direct, capteurs, moteurs. Nœud Python sur Raspberry Pi, dans Docker.</p>
           <p class="en">Controlling robots from a tablet: joystick, live camera and microphone, sensors, motors. Python node on a Raspberry Pi, in Docker.</p>
           <ul class="chips"><li>ROS 2</li><li>DDS</li><li>Python</li><li>Docker</li><li>Raspberry Pi</li></ul>
           <button type="button" class="more" data-open="ros"><span class="fr">Voir le détail</span><span class="en">See details</span>
@@ -610,7 +616,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
         <article class="card reveal" data-case="iot" data-cat="iot android">
           <p class="kind"><span class="fr">IoT · Parc de robots</span><span class="en">IoT · Robot fleet</span></p>
           <h3><span class="fr">Mises à jour à distance</span><span class="en">Remote updates</span></h3>
-          <p class="fr">Robots connectés mis à jour à distance : identification du matériel, échanges REST avec le serveur de gestion, vérification des micrologiciels.</p>
+          <p class="fr">Robots connectés mis à jour à distance : identification du matériel, échanges REST avec le serveur de gestion, vérification des micrologiciels.</p>
           <p class="en">Connected robots updated remotely: hardware identification, REST exchanges with the management server, firmware checks.</p>
           <ul class="chips"><li>IoT</li><li>REST</li><li>OTA</li><li>USB</li></ul>
           <button type="button" class="more" data-open="iot"><span class="fr">Voir le détail</span><span class="en">See details</span>
@@ -620,7 +626,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
         <article class="card reveal" data-case="prog" data-cat="mobile android robot">
           <p class="kind"><span class="fr">Éducation</span><span class="en">Education</span></p>
           <h3><span class="fr">Programmation pour enfants</span><span class="en">Programming for children</span></h3>
-          <p class="fr">Programmation visuelle par blocs : l'enfant compose un scénario, le robot l'exécute en direct.</p>
+          <p class="fr">Programmation visuelle par blocs : l'enfant compose un scénario, le robot l'exécute en direct.</p>
           <p class="en">Block-based visual programming: the child builds a scenario and the robot runs it live.</p>
           <ul class="chips"><li>Android</li><li>iOS</li><li>BLE</li></ul>
           <button type="button" class="more" data-open="prog"><span class="fr">Voir le détail</span><span class="en">See details</span>
@@ -630,7 +636,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
         <article class="card reveal" data-case="educ" data-cat="android robot">
           <p class="kind"><span class="fr">Éducation et soin</span><span class="en">Education and care</span></p>
           <h3><span class="fr">Applications éducatives</span><span class="en">Educational apps</span></h3>
-          <p class="fr">Jeux où le robot accompagne enfants et patients : motricité, langage, émotions, suivi de consignes.</p>
+          <p class="fr">Jeux où le robot accompagne enfants et patients : motricité, langage, émotions, suivi de consignes.</p>
           <p class="en">Games where the robot works with children and patients: motor skills, language, emotions, following instructions.</p>
           <ul class="chips"><li>Android</li><li>MediaPipe</li><li>TTS</li></ul>
           <button type="button" class="more" data-open="educ"><span class="fr">Voir le détail</span><span class="en">See details</span>
@@ -640,7 +646,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
         <article class="card reveal" data-case="iosperso" data-cat="mobile">
           <p class="kind"><span class="fr">Projets personnels · iOS</span><span class="en">Personal projects · iOS</span></p>
           <h3><span class="fr">Applications iOS et watchOS</span><span class="en">iOS and watchOS apps</span></h3>
-          <p class="fr">Deux applications en SwiftUI : un clone de réseau social avec Firebase, et une application de notes sur Apple Watch avec Core Data.</p>
+          <p class="fr">Deux applications en SwiftUI : un clone de réseau social avec Firebase, et une application de notes sur Apple Watch avec Core Data.</p>
           <p class="en">Two SwiftUI apps: a social network clone with Firebase, and a notes app on Apple Watch with Core Data.</p>
           <ul class="chips"><li>SwiftUI</li><li>Firebase</li><li>Core Data</li><li>watchOS</li></ul>
           <button type="button" class="more" data-open="iosperso"><span class="fr">Voir le détail</span><span class="en">See details</span>
@@ -665,7 +671,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
       <div class="sec-head reveal">
         <p class="eyebrow"><span class="fr">Méthode</span><span class="en">How I work</span></p>
         <h2><span class="fr">L'IA générative dans mon quotidien</span><span class="en">Generative AI in my daily work</span></h2>
-        <p class="fr">J'utilise Claude et Claude Code (Anthropic) chaque jour. L'IA accélère la lecture du code, le diagnostic et la documentation ; les décisions, la relecture et les tests restent les miens.</p>
+        <p class="fr">J'utilise Claude et Claude Code (Anthropic) chaque jour. L'IA accélère la lecture du code, le diagnostic et la documentation ; les décisions, la relecture et les tests restent les miens.</p>
         <p class="en">I use Claude and Claude Code (Anthropic) every day. AI speeds up code reading, diagnosis and documentation; decisions, review and testing stay with me.</p>
       </div>
       <ol class="steps">
@@ -738,7 +744,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
           <li class="now">
             <span class="when"><span class="fr">Sept. 2023 – aujourd'hui</span><span class="en">Sept. 2023 – present</span></span>
             <h3><span class="fr">Ingénieur d'études et développement confirmé, AEVAweb</span><span class="en">Experienced Software Development Engineer, AEVAweb</span></h3>
-            <p class="fr">Oujda, CDI. Logiciel du robot compagnon Buddy : Android embarqué, IoT, applications mobiles.</p>
+            <p class="fr">Oujda, CDI. Logiciel du robot compagnon Buddy : Android embarqué, IoT, applications mobiles.</p>
             <p class="en">Oujda, permanent contract. Software for the Buddy companion robot: embedded Android, IoT, mobile apps.</p>
           </li>
           <li>
@@ -793,9 +799,9 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
           <div class="skill">
             <h3><span class="fr">Langues</span><span class="en">Languages</span></h3>
             <ul class="chips plain">
-              <li><span class="fr">Arabe : maternelle</span><span class="en">Arabic: native</span></li>
-              <li><span class="fr">Français : bon niveau</span><span class="en">French: proficient</span></li>
-              <li><span class="fr">Anglais : bon niveau</span><span class="en">English: proficient</span></li>
+              <li><span class="fr">Arabe : maternelle</span><span class="en">Arabic: native</span></li>
+              <li><span class="fr">Français : bon niveau</span><span class="en">French: proficient</span></li>
+              <li><span class="fr">Anglais : bon niveau</span><span class="en">English: proficient</span></li>
             </ul>
           </div>
         </div>
@@ -854,7 +860,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
       kind: { fr: "Système embarqué", en: "Embedded system" },
       title: { fr: "Le robot Buddy passe à Android 14", en: "Moving the Buddy robot to Android 14" },
       context: {
-        fr: "Le robot compagnon Buddy change de plateforme matérielle et passe à Android 14. Tout le logiciel du robot doit suivre : système, kit de développement et applications.",
+        fr: "Le robot compagnon Buddy change de plateforme matérielle et passe à Android 14. Tout le logiciel du robot doit suivre : système, kit de développement et applications.",
         en: "The Buddy companion robot is moving to a new hardware platform running Android 14. All of the robot's software has to follow: system, development kit and apps."
       },
       diagram: true,
@@ -892,12 +898,12 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
         en: "A user video-calls the robot from a tablet or phone, through a mobile app and a server that issues access tokens."
       },
       work: {
-        fr: ["Application iOS en SwiftUI et Combine : appels vidéo, appairage au robot, caméra (AVFoundation), réglages et galerie.",
-             "Services tiers côté iOS : API REST (Alamofire), base locale SQLite, dépendances CocoaPods.",
+        fr: ["Application iOS en SwiftUI et Combine : appels vidéo, appairage au robot, caméra (AVFoundation), réglages et galerie.",
+             "Services tiers côté iOS : API REST (Alamofire), base locale SQLite, dépendances CocoaPods.",
              "Migration d'un SDK de communication temps réel côté robot, mobile et serveur.",
              "Applications allégées et mises en conformité avec les exigences récentes des stores.",
              "Corrections de plantages natifs et de fuites mémoire.",
-             "Sécurisation des jetons d'accès : OAuth2, Android Keystore, iOS Keychain."],
+             "Sécurisation des jetons d'accès : OAuth2, Android Keystore, iOS Keychain."],
         en: ["iOS app in SwiftUI and Combine: video calls, robot pairing, camera (AVFoundation), settings and gallery.",
              "Third-party services on iOS: REST APIs (Alamofire), local SQLite database, CocoaPods dependencies.",
              "Migrated a real-time communication SDK on the robot, mobile and server sides.",
@@ -965,7 +971,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
         en: "An app that teaches children programming with the robot."
       },
       work: {
-        fr: ["Programmation visuelle par blocs : scénarios, boucles, synthèse vocale.",
+        fr: ["Programmation visuelle par blocs : scénarios, boucles, synthèse vocale.",
              "Envoi du programme au robot et exécution en direct.",
              "Versions Android et iOS, liaison Bluetooth avec le robot.",
              "Adaptation à Android 14 et corrections de stabilité."],
@@ -984,14 +990,14 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
       kind: { fr: "Éducation et soin", en: "Education and care" },
       title: { fr: "Applications éducatives", en: "Educational apps" },
       context: {
-        fr: "Des jeux où le robot accompagne des enfants ou des patients en établissement : motricité, langage, émotions, suivi de consignes.",
+        fr: "Des jeux où le robot accompagne des enfants ou des patients en établissement : motricité, langage, émotions, suivi de consignes.",
         en: "Games where the robot works with children or patients in schools and care homes: motor skills, language, emotions, following instructions."
       },
       work: {
         fr: ["Jeux de mouvement, de langage et d'émotions.",
              "Reconnaissance de gestes par la caméra.",
              "Reconnaissance et synthèse vocales, applications multilingues.",
-             "Adaptation à Android 14 : stockage, voix, caméra."],
+             "Adaptation à Android 14 : stockage, voix, caméra."],
         en: ["Movement, language and emotion games.",
              "Gesture recognition with the camera.",
              "Speech recognition and text-to-speech, multilingual apps.",
@@ -1011,9 +1017,9 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
         en: "Personal projects to go deeper into the Apple ecosystem, from iPhone to Apple Watch."
       },
       work: {
-        fr: ["Clone de réseau social en SwiftUI et Firebase : publication de messages, mentions « j'aime », profil utilisateur et fil des autres utilisateurs.",
+        fr: ["Clone de réseau social en SwiftUI et Firebase : publication de messages, mentions « j'aime », profil utilisateur et fil des autres utilisateurs.",
              "Interface adaptative pour iPhone et iPad, en portrait comme en paysage.",
-             "Application de notes sur Apple Watch (watchOS) en SwiftUI et Core Data : création, modification, suppression et sauvegarde avec Fetch Request."],
+             "Application de notes sur Apple Watch (watchOS) en SwiftUI et Core Data : création, modification, suppression et sauvegarde avec Fetch Request."],
         en: ["Social network clone in SwiftUI and Firebase: posting messages, likes, user profile and a feed of other users' posts.",
              "Responsive layout for iPhone and iPad, in portrait and landscape.",
              "Notes app on Apple Watch (watchOS) in SwiftUI and Core Data: create, edit, delete and save notes with Fetch Requests."]
@@ -1034,7 +1040,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
       work: {
         fr: ["Outils internes de vérification et de test, écrits en Python.",
              "Profilage des applications et rapports de performance.",
-             "Tests unitaires, d'intégration et de non-régression ; SonarQube ; revues de code."],
+             "Tests unitaires, d'intégration et de non-régression ; SonarQube ; revues de code."],
         en: ["Internal verification and test tools, written in Python.",
              "App profiling and performance reports.",
              "Unit, integration and regression tests; SonarQube; code reviews."]
@@ -1220,7 +1226,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
       var s = window.getSelection();
       s.removeAllRanges();
       s.addRange(r);
-      toast(en ? 'Address selected: press Ctrl+C to copy it' : 'Adresse sélectionnée : faites Ctrl+C pour la copier');
+      toast(en ? 'Address selected: press Ctrl+C to copy it' : 'Adresse sélectionnée : faites Ctrl+C pour la copier');
     }
     try {
       navigator.clipboard.writeText(mail.textContent.trim()).then(function () {
@@ -1264,9 +1270,9 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
   function typeStep() {
     var words = ROLES[lang], w = words[ri % words.length];
     if (reduce) { roleEl.textContent = words.join(' · '); return; }
-    ci += del ? -1 : 1;
+    ci += del ? -1 : 1;
     roleEl.textContent = w.slice(0, ci);
-    var wait = del ? 35 : 70;
+    var wait = del ? 35 : 70;
     if (!del && ci >= w.length) { del = true; wait = 1600; }
     else if (del && ci <= 0) { del = false; ri++; wait = 300; }
     setTimeout(typeStep, wait);
