@@ -305,6 +305,8 @@ h2 { font: 600 clamp(1.65rem, 3.4vw, 2.25rem)/1.15 var(--f-display); letter-spac
 .contact-card > div { min-width: 0; display: grid; gap: 10px; }
 .mail { font: 500 clamp(1rem, 2.6vw, 1.4rem) var(--f-mono); color: var(--ink); overflow-wrap: anywhere; user-select: all; margin: 0; }
 .contact-meta { margin: 0; color: var(--muted); }
+.mail a { color: inherit; text-decoration: none; }
+.mail a:hover { color: var(--accent); }
 footer { padding-block: 28px 40px; color: var(--muted); font-size: .86rem; }
 footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: space-between; }
 
@@ -655,10 +657,10 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
 
         <article class="card reveal" data-case="tools" data-cat="android">
           <p class="kind"><span class="fr">Qualité</span><span class="en">Quality</span></p>
-          <h3><span class="fr">Outils et qualité</span><span class="en">Tooling and quality</span></h3>
-          <p class="fr">Outils internes de vérification et de test, profilage des performances, revues de code et tests de non-régression.</p>
-          <p class="en">Internal verification and test tools, performance profiling, code reviews and regression tests.</p>
-          <ul class="chips"><li>Python</li><li>Profiling</li><li>SonarQube</li></ul>
+          <h3><span class="fr">Tests, qualité et documentation</span><span class="en">Testing, quality and documentation</span></h3>
+          <p class="fr">Plans et campagnes de tests (fonctionnels, non-régression, sur le matériel), outils de vérification, profilage et la documentation qui accompagne le code.</p>
+          <p class="en">Test plans and campaigns (functional, regression, on-device), verification tools, profiling and the documentation that goes with the code.</p>
+          <ul class="chips"><li>Python</li><li>JUnit</li><li>SonarQube</li><li>Docs</li></ul>
           <button type="button" class="more" data-open="tools"><span class="fr">Voir le détail</span><span class="en">See details</span>
             <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         </article>
@@ -793,6 +795,10 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
             <ul class="chips plain"><li>Git</li><li>GitHub</li><li>GitLab</li><li>GitLab CI/CD</li><li>Git LFS</li><li>GitHub Pages</li><li>GitHub CLI</li><li>Pull / merge requests</li><li><span class="fr">Revues de code</span><span class="en">Code reviews</span></li><li><span class="fr">Branches, rebase, cherry-pick</span><span class="en">Branching, rebase, cherry-pick</span></li><li><span class="fr">Résolution de conflits</span><span class="en">Conflict resolution</span></li></ul>
           </div>
           <div class="skill">
+            <h3><span class="fr">Tests et documentation</span><span class="en">Testing and documentation</span></h3>
+            <ul class="chips plain"><li><span class="fr">Plans de test</span><span class="en">Test plans</span></li><li><span class="fr">Tests de non-régression</span><span class="en">Regression testing</span></li><li><span class="fr">Tests sur le matériel</span><span class="en">On-device testing</span></li><li>JUnit</li><li><span class="fr">Rapports de test</span><span class="en">Test reports</span></li><li><span class="fr">Analyses techniques</span><span class="en">Technical analyses</span></li><li><span class="fr">Spécifications</span><span class="en">Specifications</span></li><li><span class="fr">Documentation fonctionnelle et d'architecture</span><span class="en">Functional and architecture docs</span></li><li><span class="fr">Guides utilisateurs FR/EN</span><span class="en">User guides FR/EN</span></li><li><span class="fr">Estimations de charge</span><span class="en">Effort estimates</span></li></ul>
+          </div>
+          <div class="skill">
             <h3><span class="fr">IA générative</span><span class="en">Generative AI</span></h3>
             <ul class="chips plain"><li class="hl">Claude</li><li class="hl">Claude Code</li><li class="hl"><span class="fr">Skills personnalisés</span><span class="en">Custom skills</span></li><li class="hl"><span class="fr">Instructions de projet</span><span class="en">Project instructions</span></li><li class="hl"><span class="fr">Ingénierie de prompts</span><span class="en">Prompt engineering</span></li></ul>
           </div>
@@ -816,6 +822,7 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
           <p class="eyebrow">Contact</p>
           <h2><span class="fr">Parlons de votre projet</span><span class="en">Let's talk about your project</span></h2>
           <p class="mail" id="mail">o.bouchentouf40@gmail.com</p>
+          <p class="mail phone"><a href="tel:+212624361968">+212 6 24 36 19 68</a></p>
           <p class="contact-meta"><span class="fr">Oujda, Maroc · ouvert aux postes sur site et à distance</span><span class="en">Oujda, Morocco · open to on-site and remote roles</span></p>
         </div>
         <button type="button" class="btn primary" id="copy-mail">
@@ -1032,24 +1039,28 @@ dialog.case::backdrop { background: rgba(8, 20, 22, .55); backdrop-filter: blur(
     },
     tools: {
       kind: { fr: "Qualité", en: "Quality" },
-      title: { fr: "Outils et qualité", en: "Tooling and quality" },
+      title: { fr: "Tests, qualité et documentation", en: "Testing, quality and documentation" },
       context: {
-        fr: "Des outils pour aller plus vite et livrer sans régression.",
-        en: "Tools to move faster and ship without regressions."
+        fr: "Tester, vérifier et documenter pour livrer sans régression.",
+        en: "Testing, verifying and documenting to ship without regressions."
       },
       work: {
-        fr: ["Outils internes de vérification et de test, écrits en Python.",
+        fr: ["Rédaction des plans de test et conduite des campagnes : tests fonctionnels, de non-régression et sur le matériel du robot, avec rapports de test.",
+             "Rédaction de la documentation : analyses techniques, spécifications fonctionnelles, documentation fonctionnelle et d'architecture, guides utilisateurs bilingues, estimations de charge.",
+             "Outils internes de vérification et de test, écrits en Python.",
              "Profilage des applications et rapports de performance.",
              "Tests unitaires, d'intégration et de non-régression ; SonarQube ; revues de code."],
-        en: ["Internal verification and test tools, written in Python.",
+        en: ["Wrote test plans and ran test campaigns: functional, regression and on-device tests on the robot hardware, with test reports.",
+             "Wrote the documentation: technical analyses, functional specifications, functional and architecture documentation, bilingual user guides, effort estimates.",
+             "Internal verification and test tools, written in Python.",
              "App profiling and performance reports.",
              "Unit, integration and regression tests; SonarQube; code reviews."]
       },
       result: {
-        fr: "Moins d'installations à l'aveugle et des livraisons vérifiées.",
-        en: "Fewer blind installs and verified deliveries."
+        fr: "Des livraisons testées, vérifiées et documentées.",
+        en: "Tested, verified and documented deliveries."
       },
-      stack: ["Python", "SonarQube", "JUnit", "adb"]
+      stack: ["Python", "JUnit", "SonarQube", "adb", "Profiling", "Technical writing"]
     }
   };
   var ORDER = ["android14", "telepresence", "ros", "iot", "prog", "educ", "iosperso", "tools"];
